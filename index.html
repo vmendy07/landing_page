@@ -6,13 +6,386 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CEEC7PJS9"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5CEEC7PJS9');
+		</script>
+
+		<title>Vincent Mendy - Computer Engineer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		
+		<title>Galaxy Background Effect</title>
+		<style>
+			.space-background {
+			background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+			height: 100vh;
+			overflow: hidden;
+			position: relative;
+			}
+
+			.stars, .planets, .galaxies {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			}
+
+			.star, .planet, .galaxy {
+			position: absolute;
+			background-color: #fff;
+			border-radius: 50%;
+			}
+
+			.star {
+			width: 1px;
+			height: 1px;
+			animation: twinkle 5s infinite;
+			}
+
+			.planet {
+			width: 2px;
+			height: 2px;
+			background-color: #FFD700;
+			box-shadow: 0 0 10px #FFD700;
+			}
+
+			.galaxy {
+			width: 100px;
+			height: 100px;
+			background: radial-gradient(ellipse at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+			opacity: 0.3;
+			}
+
+			@keyframes twinkle {
+			0%, 100% { opacity: 0.3; }
+			50% { opacity: 1; }
+			}
+		</style>
+		<!-- <style>
+			#intro, #one {
+			  position: relative;
+			  overflow: hidden;
+			}
+			.space-background {
+  				background: #000000;
+  				height: 100vh;
+  				overflow: hidden;
+  				position: relative;
+			}
+			.stars {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  pointer-events: none;
+			}
+			
+			.star {
+			  position: absolute;
+			  background-color: #fff;
+			  width: 2px;
+			  height: 2px;
+			  border-radius: 50%;
+			  animation: twinkle ease infinite;
+			}
+		  
+			@keyframes twinkle {
+			  0%, 100% { opacity: 0; }
+			  50% { opacity: 1; }
+			}
+		  
+			#intro .inner {
+			  position: relative;
+			  z-index: 2;
+			}
+		  </style> -->
+
+		  <!-- cursor css -->
+		  <style>
+			.custom-cursor {
+			  position: fixed;
+			  pointer-events: none;
+			  z-index: 9999;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  overflow: hidden;
+			}
+
+			.cursor-dot {
+			  width: 8px;
+			  height: 8px;
+			  background-color: #00ffff;
+			  border-radius: 50%;
+			  position: absolute;
+			  transform: translate(-50%, -50%);
+			  box-shadow: 0 0 5px #00ffff;
+			}
+
+		
+			.cursor-circle {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: 2px solid #00ffff;
+				box-shadow: 0 0 10px #00ffff;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				pointer-events: none;
+				transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+				}
+
+			.cursor-circle.hover {
+				width: 60px;
+				height: 60px;
+				}
+
+			.cursor-circle::after {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.1);
+				mix-blend-mode: difference;
+				transition: opacity 0.3s ease;
+				}
+
+				.cursor-circle.hover::after {
+				opacity: 0.5; /* Increase opacity when hovering */
+				}
+
+
+				/* about me css */
+
+			.unveiling-realm {
+				background-color: #312450;
+				color: white;
+				padding: 2em;
+				font-family: Arial, sans-serif;
+				}
+
+			.unveiling-realm h1 {
+				font-size: 1.2em;
+				text-transform: uppercase;
+				margin-bottom: 0.5em;
+				}
+
+			.unveiling-realm h2 {
+				font-size: 2.5em;
+				margin-top: 0;
+				margin-bottom: 0.5em;
+				}
+
+			.unveiling-realm p {
+				font-size: 1em;
+				line-height: 1.5;
+				}
+		</style>
+
+
+		<title>Typewriter Effect</title>
+		<style>
+		.typing-effect-wrapper {
+			position: relative;
+			display: inline-block;
+			height: 1.2em; /* Adjust based on your font size */
+		}
+		.typing-effect {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-family: monospace;
+			font-size: 24px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.typing-effect::after {
+			content: '|';
+			position: absolute;
+			right: -4px;
+			animation: blink-caret 0.75s step-end infinite;
+		}
+		@keyframes blink-caret {
+			from, to { opacity: 0; }
+			50% { opacity: 1; }
+		}
+		</style>
+
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #5e42a6;
+				color: #ffffff;
+				font-size: 14px; /* Base font size reduced */
+			}
+			.timeline {
+				position: relative;
+				max-width: 1000px;
+				margin: 0 auto;
+			}
+			.timeline::after {
+				content: '';
+				position: absolute;
+				width: 2px;
+				background-color: #ffffff;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -1px;
+			}
+			.timeline-item {
+				padding: 10px 40px;
+				position: relative;
+				background-color: inherit;
+				width: 50%;
+			}
+			.timeline-item::after {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				right: -17px;
+				background-color: #ffffff;
+				border: 4px solid #64ffda;
+				top: 15px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+			.left {
+				left: 0;
+			}
+			.right {
+				left: 50%;
+			}
+			.content {
+				padding: 20px 30px;
+				background-color: #312450;
+				position: relative;
+				border-radius: 6px;
+			}
+			.date {
+				position: absolute;
+				top: 15px;
+				color: #8892b0;
+			}
+			.left .date {
+				right: -200px;
+			}
+			.right .date {
+				left: -200px;
+			}
+			.right::after {
+				left: -16px;
+			}
+			h2 {
+				color: #ccd6f6;
+				margin-bottom: 5px;
+			}
+			h3 {
+				color: #64ffda;
+				margin-top: 0;
+			}
+			ul {
+				padding-left: 20px;
+			}
+		</style>
+		<title>Projects</title>
+		<style>
+			
+			.projects {
+				padding: 4rem 0;
+				/* background-color: #f8f9fa; */
+				}
+			.project-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				padding: 2rem;
+			}
+
+			.project-link {
+				text-decoration: none;
+				color: inherit;
+				display: block;
+			}
+
+			.project-card {
+				background-color: #312450;
+				border-radius: 10px;
+				overflow: hidden;
+				transition: transform 0.3s ease;
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.project-image img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.project-content {
+				padding: 1.5rem;
+				position: relative;
+			}
+
+			.project-title {
+				color: #ffffff;
+				margin-bottom: 0.5rem;
+			}
+
+			.project-description {
+				color: #a0a0a0;
+				font-size: 0.9rem;
+				margin-bottom: 1rem;
+			}
+
+			.project-tags {
+				display: flex;
+				justify-content: flex-end;
+				padding-top: 0.5rem;
+			}
+
+			.tag {
+				background-color: #1c0c41;
+				color: #61dafb;
+				padding: 0.2rem 0.5rem;
+				border-radius: 15px;
+				font-size: 0.8rem;
+				margin-left: 0.5rem;
+			}
+		</style>
+
+		</head>
+		
+		<body class="is-preload">
+			<div class="custom-cursor">
+				<div class="cursor-circle"></div>
+				<div class="cursor-dot"></div>
+			</div>
+			    <div id="galaxy-background">
+        <div class="stars"></div>
+        <div class="planets"></div>
+        <div class="galaxies"></div>
+    </div>
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -20,9 +393,11 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#one">About Me</a></li>
+							<li><a href="#two">Experience</a></li>
+							<li><a href="#three">Projects</a></li>
+							<li><a href="#four">Get in touch</a></li>
+							
 						</ul>
 					</nav>
 				</div>
@@ -33,104 +408,153 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="stars"></div>
 						<div class="inner">
-							<h1>Vincent Mendy</h1>
-							<p>Computer Engineer <a href="http://html5up.net"></a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
+						<h1>Vincent Mendy</h1>
+						<h3> Hi i'm a</h3>
+							<span class="typing-effect-wrapper">
+								<span class="typing-effect" data-text='["Computer Engineer", "Developer", "Problem Solver"]'></span>
+							</span>
+						</p>
+							<!-- <a href="http://html5up.net"></a><br />
+						and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p> -->
+						<ul class="actions">
+							<li><a href="#one" class="button scrolly">Learn more</a></li>
+						</ul>
 						</div>
 					</section>
+					<!-- about section -->
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					<section id="one"class="unveiling-realm">
+						<div class="stars"></div>
+						<div class="planets"></div>
+						<div class="galaxies"></div>
+						
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+						<h1>UNVEILING MY REALM</h1>
+						
+						<h2>About Me</h2>
+						
+						<p> 
+							As a final-year MEng Electronics and Computer Engineering student, 
+							I specialize in <span style="color: #64ffda;font-weight: bold;	"> advanced programming</span>, <span style="color: #64ffda;font-weight: bold;"> Signal Processing</span>, 
+							and <span style="color: #64ffda;font-weight: bold;"> Digital Electronics</span>. 
+							<br>My passion lies in harnessing the power of <span style="color: #64ffda; font-weight: bold;"> Large Language Models</span> to create innovative solutions that benefit society. 
+							<br>With a lightning-fast learning curve and meticulous attention to detail, I'm on a mission to shape the future of technology. 
+							<br> Join me on this exhilarating journey at the cutting edge of <strong><span style="color: #64ffda;"> innovation</span></strong>!
+						</p>
+					</div>
+					  </section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+				<!-- Experience -->
+				<section id="two" class ="timeline_1">
+						<div class="stars"></div>
+						<div class="planets"></div>
+						<div class="galaxies"></div>
+				
+					<div class="inner">
+						<h1>Experience</h1>
+				</section>
+
+				<section class="timeline">
+					<div class="stars"></div>
+					<div class="planets"></div>
+					<div class="galaxies"></div>
+					<div class="inner">
+					
+					<div class="timeline-item left">
+						<div class="content">
+							<h2>Software Engineering Fellow</h2>
+							<h3>Headstarter AI</h3>
+							<p>Ongoing training in software engineering, data structures, and algorithms, with a focus on Python, Next.js, and React.js.</p>
+							<p>Being coached by Amazon, Bloomberg, and Capital One engineers on Agile, CI/CD, Git, and microservice patterns.</p>
+						</div>
+						<div class="date">July - August 2024</div>
+					</div>
+					<div class="timeline-item right">
+						<div class="content">
+							<h2>Machine Learning Researcher</h2>
+							<h3>University of Wisconsi-Madison</h3>
+							<p>Conducted cutting-edge research in Natural Language Processing, focused on enhancing trustworthiness with the latest open/close-weighted large language models such as GPT 4, Claude 3.5, & LLama-3 by using encryption with prompt jailbreaking techniques.</p>
+					
+						</div>
+						<div class="date">May 2024 - Present</div>
+					</div>
+					<div class="timeline-item left">
+						<div class="content">
+							<h2>AI Engineering Intern</h2>
+							<h3>Invenics</h3>
+							<p>Designed and developed multiple Cloud distributed Restful APIs for mobile applications using Python, Natural Language Processing and NoSQL Databases.</p>
+							<p>Enhanced Generative AI Large Language models utilizing Synchronous, Asynchronous, and functional programming techniques.</p>
+							<p>Collaborated effectively within an agile team, and actively participated in daily stand-ups and sprint planning meetings, contributing to the successful delivery of multiple live projects.</p>
+						</div>
+						<div class="date">June 2023 - Sept 2023</div>
+					</div>
+				</section>
+
+				<!-- Projects -->
+
+				<section id="three" class="projects">
+					<h2>Featured Projects</h2>
+					<div class="project-grid">				
+						<a href="https://github.com/vmendy07/Legislation_and_Standard_Clause_Processor_py" class="project-link" target="_blank" rel="noopener noreferrer">
+							<article class="project-card">
+								<div class="project-image">
+									<img src="images/ezgif-7-9ee87343e5.jpg" alt="Legislation and Standards Clause Processor Project Screenshot">
+								</div>
+								<div class="project-content">
+									<h3 class="project-title">Legislation and Standards Clause Processor</h3>
+									<p class="project-description">A dynamic web app for mastering sign language, using Python-based Hand Detection, Mediapipe for accurate tracking, and Three.js for 3D visualization. It features a MongoDB and Flask backend for storing search histories and coordinate data for 3D hand animations.</p>
+									<div class="project-tags">
+										<span class="tag">#python</span>
+										<span class="tag">#regex</span>
+									</div>
+								</div>
+							</article>
+
+							<a href="https://github.com/vmendy07/Control_Access_Microcontroller_CPP" class="project-link" target="_blank" rel="noopener noreferrer">
+								<article class="project-card">
+									<div class="project-image">
+										<img src="images\ezgif-7-3d6763d97c.jpg" alt="Project Screenshot">
+									</div>
+									<div class="project-content">
+										<h3 class="project-title">Control Access Microcontroller CPP</h3>
+										<p class="project-description">A secure access control system using a microcontroller. It provides two levels of access control: a lower level for normal users to operate a relay (open a door) and a higher level for supervisors to set entry codes for both levels of access control.</p>
+										<div class="project-tags">
+											<span class="tag">#C++</span>
+											<span class="tag">#Embedded</span>
+											<span class="tag">#Electronics</span>
+										</div>
+									</div>
+								</article>
+
+								<a href="https://github.com/vmendy07/UART_SPI_Logic_Analyzer_SV" class="project-link" target="_blank" rel="noopener noreferrer">
+									<article class="project-card">
+										<div class="project-image">
+											<img src="images\ezgif-7-88b1e45f2d.jpg" alt="Project Screenshot">
+										</div>
+										<div class="project-content">
+											<h3 class="project-title">UART SPI Logic Analyzer</h3>
+											<p class="project-description">A logic Analyzer Devloped in System Verilog to Analyze UART and SPI Signals digitally.</p>
+											<div class="project-tags">
+												<span class="tag">#SystemVerilog</span>
+												<span class="tag">#Scripting</span>
+												<span class="tag">#FPGA</span>
+											</div>
+										</div>
+									</article>
+									
+					</div>
+				  </section>
+				
+				<!-- Get in touch -->
+					<section id="four" class="wrapper style1 fade-up">
+						<div class="stars"></div>
+						<div class="planets"></div>
+						<div class="galaxies"></div>
 						<div class="inner">
 							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<p>Feel free to reach out to me for any inquiries or collaboration opportunities.</p>
 							<div class="split style1">
 								<section>
 									<form method="post" action="#">
@@ -155,15 +579,10 @@
 								</section>
 								<section>
 									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
+
 										<li>
 											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
+											<a href="#">vincent@vincentmendy.com</a>
 										</li>
 										<li>
 											<h3>Phone</h3>
@@ -204,6 +623,203 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				  const intro = document.getElementById('intro');
+				  const starsContainer = intro.querySelector('.stars');
+				  const starCount = 200; // Adjust for desired star density
+			  
+				  for (let i = 0; i < starCount; i++) {
+					const star = document.createElement('div');
+					star.className = 'star';
+					star.style.left = `${Math.random() * 100}%`;
+					star.style.top = `${Math.random() * 100}%`;
+					star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+					star.style.animationDelay = `${Math.random() * 3}s`;
+					starsContainer.appendChild(star);
+				  }
+			  
+				  // Parallax effect
+				  window.addEventListener('scroll', function() {
+					const scrollPosition = window.pageYOffset;
+					const introHeight = intro.offsetHeight;
+					const introTop = intro.offsetTop;
+					
+					if (scrollPosition >= introTop && scrollPosition <= (introTop + introHeight)) {
+					  const yPos = (scrollPosition - introTop) * 0.5; // Adjust 0.5 for desired effect
+					  starsContainer.style.transform = `translateY(${yPos}px)`;
+					}
+				  });
+				});
+			</script>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+				const cursor = document.querySelector('.custom-cursor');
+				const circle = cursor.querySelector('.cursor-circle');
+				const dot = cursor.querySelector('.cursor-dot');
+				
+				let mouseX = 0, mouseY = 0;
+				let circleX = 0, circleY = 0;
+				let dotX = 0, dotY = 0;
+				
+				function animate() {
+					// Smooth follow for the circle
+					circleX += (mouseX - circleX) * 0.1;
+					circleY += (mouseY - circleY) * 0.1;
+					
+					// Slightly faster follow for the dot
+					dotX += (mouseX - dotX) * 0.2;
+					dotY += (mouseY - dotY) * 0.2;
+					
+					// Apply positions, centering both elements
+					circle.style.transform = `translate(${circleX}px, ${circleY}px) translate(-50%, -50%)`;
+					dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+					
+					requestAnimationFrame(animate);
+				}
+				
+				document.addEventListener('mousemove', (e) => {
+					mouseX = e.clientX;
+					mouseY = e.clientY;
+				});
+				
+				// Add hover effect for clickable elements
+				const clickableElements = document.querySelectorAll('a, button, input[type="submit"], input[type="button"], #sidebar a, #header a');
+				
+				clickableElements.forEach(elem => {
+					elem.addEventListener('mouseenter', () => {
+					circle.classList.add('hover');
+					targetWidth = 60;
+					isHovering = true;
+					});
+					
+					elem.addEventListener('mouseleave', () => {
+					circle.classList.remove('hover');
+					targetWidth = 40;
+					isHovering = false;
+					});
+				});
+  
+				
+				animate(); // Start the animation loop
+				});
+				</script>
+				<!--  typing effect	 -->
+
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						const elements = document.querySelectorAll('.typing-effect');
+						
+						elements.forEach(element => {
+							const container = element.parentElement;
+							const phrases = JSON.parse(element.getAttribute('data-text'));
+							let currentPhraseIndex = 0;
+			
+							// Set the container width to the longest phrase
+							const maxWidth = Math.max(...phrases.map(phrase => phrase.length)) + 'ch';
+							container.style.width = maxWidth;
+			
+							function typePhrase(phrase) {
+								let i = 0;
+								element.textContent = '';
+			
+								function typeChar() {
+									if (i < phrase.length) {
+										element.textContent += phrase.charAt(i);
+										i++;
+										setTimeout(typeChar, 100);
+									} else {
+										setTimeout(erasePhrase, 2000);
+									}
+								}
+								typeChar();
+							}
+			
+							function erasePhrase() {
+								let text = element.textContent;
+								
+								function eraseChar() {
+									if (text.length > 0) {
+										text = text.slice(0, -1);
+										element.textContent = text;
+										setTimeout(eraseChar, 50);
+									} else {
+										currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+										setTimeout(() => typePhrase(phrases[currentPhraseIndex]), 500);
+									}
+								}
+								eraseChar();
+							}
+			
+							typePhrase(phrases[currentPhraseIndex]);
+						});
+					});
+				</script>
+
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						const intro = document.getElementById('intro');
+						const starsContainer = intro.querySelector('.stars');
+						const planetsContainer = document.createElement('div');
+						planetsContainer.className = 'planets';
+						const galaxiesContainer = document.createElement('div');
+						galaxiesContainer.className = 'galaxies';
+						intro.appendChild(planetsContainer);
+						intro.appendChild(galaxiesContainer);
+
+						const starCount = 200;
+						const planetCount = 20;
+						const galaxyCount = 5;
+
+						function createCelestialObject(container, className, count) {
+							for (let i = 0; i < count; i++) {
+							const element = document.createElement('div');
+							element.className = className;
+							element.style.left = `${Math.random() * 100}%`;
+							element.style.top = `${Math.random() * 100}%`;
+							if (className === 'star') {
+								element.style.animationDuration = `${Math.random() * 3 + 2}s`;
+								element.style.animationDelay = `${Math.random() * 3}s`;
+							}
+							container.appendChild(element);
+							}
+						}
+
+						createCelestialObject(starsContainer, 'star', starCount);
+						createCelestialObject(planetsContainer, 'planet', planetCount);
+						createCelestialObject(galaxiesContainer, 'galaxy', galaxyCount);
+
+						// Parallax effect
+						window.addEventListener('scroll', function() {
+							const scrollPosition = window.pageYOffset;
+							const introHeight = intro.offsetHeight;
+							const introTop = intro.offsetTop;
+							
+							if (scrollPosition >= introTop && scrollPosition <= (introTop + introHeight)) {
+							const yPos = (scrollPosition - introTop) * 0.5;
+							starsContainer.style.transform = `translateY(${yPos * 0.8}px)`;
+							planetsContainer.style.transform = `translateY(${yPos * 0.5}px)`;
+							galaxiesContainer.style.transform = `translateY(${yPos * 0.2}px)`;
+							}
+						});
+
+						// Add subtle movement to galaxies
+						function moveGalaxies() {
+							const galaxies = document.querySelectorAll('.galaxy');
+							galaxies.forEach(galaxy => {
+							const xMove = Math.sin(Date.now() / 10000) * 50;
+							const yMove = Math.cos(Date.now() / 10000) * 50;
+							galaxy.style.transform = `translate(${xMove}px, ${yMove}px)`;
+							});
+							requestAnimationFrame(moveGalaxies);
+						}
+
+						moveGalaxies();
+						});
+					
+				</script>
 
 	</body>
 </html>
